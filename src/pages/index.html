@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Eiseb Financial System</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <span class="nav-brand">🐄 Eiseb Financial System</span>
+    <ul>
+      <li><a href="index.html" class="active">Dashboard</a></li>
+      <li><a href="transactions.html">Transactions</a></li>
+      <li><a href="reports.html">Reports</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <span class="nav-user">👤 Farm Manager &nbsp;|&nbsp; <a href="login.html" style="color:var(--accent)">Logout</a></span>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div>
+      <h1>Financial Dashboard</h1>
+      <p class="subtitle">Eiseb Country Traders — Livestock Financial Management</p>
+    </div>
+    <div class="header-date" id="currentDate"></div>
+  </div>
+
+  <!-- Summary Cards -->
+  <div class="dashboard-grid">
+
+    <div class="card card-income">
+      <div class="card-icon">📈</div>
+      <div class="card-body">
+        <p class="card-label">Total Income</p>
+        <h2 class="card-value" id="totalIncome">N$ 0.00</h2>
+        <p class="card-sub">This month</p>
+      </div>
+    </div>
+
+    <div class="card card-expense">
+      <div class="card-icon">📉</div>
+      <div class="card-body">
+        <p class="card-label">Total Expenses</p>
+        <h2 class="card-value" id="totalExpense">N$ 0.00</h2>
+        <p class="card-sub">This month</p>
+      </div>
+    </div>
+
+    <div class="card card-balance">
+      <div class="card-icon">💰</div>
+      <div class="card-body">
+        <p class="card-label">Net Balance</p>
+        <h2 class="card-value" id="netBalance">N$ 0.00</h2>
+        <p class="card-sub">Income − Expenses</p>
+      </div>
+    </div>
+
+    <div class="card card-livestock">
+      <div class="card-icon">🐄</div>
+      <div class="card-body">
+        <p class="card-label">Livestock Assets</p>
+        <h2 class="card-value" id="livestockValue">N$ 0.00</h2>
+        <p class="card-sub">Total valuation</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Recent Transactions + Quick Add -->
+  <div class="content-row">
+
+    <!-- Recent Transactions -->
+    <section class="panel panel-wide">
+      <div class="panel-header">
+        <h3>Recent Transactions</h3>
+        <a href="transactions.html" class="link-all">View all →</a>
+      </div>
+      <table class="data-table" id="recentTable">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Type</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="recentBody">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Quick Add Form -->
+    <section class="panel panel-narrow">
+      <div class="panel-header">
+        <h3>Quick Add Transaction</h3>
+      </div>
+      <form id="quickForm">
+        <div class="form-group">
+          <label for="txType">Type</label>
+          <select id="txType">
+            <option value="Income">Income</option>
+            <option value="Expense">Expense</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="txCategory">Category</label>
+          <select id="txCategory">
+            <option>Livestock Sale</option>
+            <option>Auction Proceeds</option>
+            <option>Feed</option>
+            <option>Veterinary</option>
+            <option>Transport</option>
+            <option>Wages</option>
+            <option>Equipment</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="txAmount">Amount (N$)</label>
+          <input type="number" id="txAmount" placeholder="0.00" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="txDate">Date</label>
+          <input type="date" id="txDate">
+        </div>
+        <div class="form-group">
+          <label for="txDesc">Description</label>
+          <input type="text" id="txDesc" placeholder="Optional note">
+        </div>
+        <button type="button" class="btn-primary" onclick="addTransaction()">Save Transaction</button>
+        <p id="formMsg" style="margin-top:0.5rem;font-size:0.85rem;color:var(--success);"></p>
+      </form>
+    </section>
+
+  </div>
+
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

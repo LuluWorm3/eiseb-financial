@@ -1,0 +1,186 @@
+WPM711S PROJECT DOCUMENTATION REPORT
+Livestock Financial Management System
+Eiseb Country Traders
+
+Group 2
+-------
+221096574 – KAMPOLO, T.V.A
+222027592 – SINVULA, W E
+222095814 – KAMILU, AOL
+222115823 – BASSON, N.B
+222130792 – UNJOMBALA, P M
+
+Date: May 2026
+NUST – WPM711S Web Programming
+
+================================================================
+TABLE OF CONTENTS
+================================================================
+1. Introduction
+2. Application Description
+   2a. Objectives
+   2b. Services Offered
+   2c. Intended Audience
+   2d. Function of Each Page
+3. Use Case Diagram
+4. Use Case Description
+5. System Sequence Diagram
+6. References
+
+================================================================
+1. INTRODUCTION
+================================================================
+
+Eiseb Country Traders is a cattle baron organisation based in
+Namibia that currently relies on a manual filing system to
+manage its business operations. The increasing complexity of
+livestock financial management, including tracking income from
+livestock sales, managing operational expenses, and generating
+financial summaries, has created the need for a digital solution.
+
+As IT consultants engaged by the director of Eiseb Country
+Traders, our team has been tasked with designing and developing
+a web-based Livestock Financial Management System (LFMS) as part
+of a larger Enterprise Resource Planning (ERP) solution.
+
+This report documents the analysis, design models, and web
+application developed to address the financial management needs
+of the organisation.
+
+================================================================
+2. APPLICATION DESCRIPTION
+================================================================
+
+2a. OBJECTIVES
+--------------
+The Livestock Financial Management System aims to:
+- Digitise and automate the recording of all financial
+  transactions related to livestock operations.
+- Provide a centralised platform for tracking income (e.g.,
+  livestock sales, auction proceeds) and expenses (e.g., feed
+  costs, veterinary services, transport).
+- Maintain a register of livestock asset valuations.
+- Generate financial summaries and reports for management
+  decision-making.
+- Provide secure user access through registration and login.
+
+2b. SERVICES OFFERED
+--------------------
+The application provides the following services:
+- User registration and authentication (login/logout).
+- Recording and viewing income transactions.
+- Recording and viewing expense transactions.
+- Livestock asset valuation management.
+- Financial summary and reporting dashboard.
+- A contact page for enquiries.
+
+2c. INTENDED AUDIENCE
+---------------------
+The system is intended for use by:
+- Farm managers responsible for financial oversight.
+- Administrative staff recording day-to-day transactions.
+- The director/owner requiring summary reports.
+
+2d. FUNCTION OF EACH PAGE
+--------------------------
+Home / Dashboard (index.html):
+  Displays a financial summary including total income, total
+  expenses, and net balance. Provides quick navigation links
+  to all modules.
+
+Register (register.html):
+  Allows new users to create an account by providing their
+  full name, email address, and password. Includes form
+  validation.
+
+Login (login.html):
+  Authenticates existing users using email and password.
+  Redirects to the dashboard upon successful login.
+
+Transactions (transactions.html):
+  Allows users to record new income or expense transactions,
+  and to view, search, and filter existing transaction records.
+
+Reports (reports.html):
+  Displays financial summaries, including monthly income vs
+  expense comparisons and livestock valuation totals.
+
+Contact Us (contact.html):
+  Provides a form for users or external parties to submit
+  enquiries. Fields include name, email, and message.
+
+================================================================
+3. USE CASE DIAGRAM
+================================================================
+
+[INSERT USE CASE DIAGRAM IMAGE HERE]
+
+Actor: Farm Manager
+
+Use Cases:
+- Register Account
+- Login to System
+- Record Income Transaction
+- Record Expense Transaction
+- View Financial Report
+- Manage Livestock Valuations
+- Submit Contact Enquiry
+- Logout
+
+================================================================
+4. USE CASE DESCRIPTION
+================================================================
+
+Use Case Name:   Record Income Transaction
+Actor:           Farm Manager
+Pre-condition:   The Farm Manager must be logged into the system.
+Post-condition:  The income transaction is saved to the database
+                 and reflected in the financial summary.
+
+Main Flow:
+  1. The Farm Manager navigates to the Transactions page.
+  2. The system displays the transaction form and existing records.
+  3. The Farm Manager selects "Income" as the transaction type.
+  4. The Farm Manager enters the category (e.g., Livestock Sale),
+     amount, date, and optional description.
+  5. The Farm Manager clicks "Save Transaction."
+  6. The system validates the input.
+  7. The system saves the record to the database.
+  8. The system displays a confirmation message.
+
+Alternative Flow (Step 6 – Validation Error):
+  6a. The system detects missing or invalid input.
+  6b. The system highlights the invalid fields and displays
+      an error message.
+  6c. The Farm Manager corrects the input and resubmits.
+
+================================================================
+5. SYSTEM SEQUENCE DIAGRAM
+================================================================
+
+[INSERT SEQUENCE DIAGRAM IMAGE HERE]
+
+Sequence: Record Income Transaction
+
+Farm Manager          Browser/UI           Server (Servlet)       Database (MySQL)
+     |                    |                      |                      |
+     |--- Enter data ----> |                      |                      |
+     |--- Click Save ----> |                      |                      |
+     |                    |--- POST /addTrans --> |                      |
+     |                    |                      |--- validateInput()   |
+     |                    |                      |--- INSERT query ----> |
+     |                    |                      |                      |--- OK
+     |                    |                      | <--- success -------- |
+     |                    | <-- confirmation --- |                      |
+     | <-- display msg --- |                      |                      |
+
+================================================================
+6. REFERENCES
+================================================================
+
+[List your references here using Harvard or APA style as
+required by your course outline.]
+
+Example:
+NUST. (2020). Policy on Plagiarism. Windhoek: Namibia University
+of Science and Technology.

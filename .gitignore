@@ -1,0 +1,28 @@
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Compiled Java
+*.class
+*.jar
+*.war
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Database credentials — NEVER commit these
+db.properties
+config.properties
+
+# Node (if used for tooling)
+node_modules/
+
+# Build output
+build/
+out/
+target/

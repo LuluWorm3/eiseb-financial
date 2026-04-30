@@ -1,0 +1,62 @@
+# GitHub Setup Guide — Group 2
+# Eiseb Financial Management System
+
+## Step 1: One member creates the repository (Project Manager)
+
+1. Go to https://github.com and sign in (or create a free account).
+2. Click the "+" icon → "New repository".
+3. Repository name: eiseb-financial-system
+4. Description: WPM711S Group 2 — Livestock Financial Management System
+5. Set to PUBLIC (or Private if preferred).
+6. Check "Add a README file" — NO (we have our own).
+7. Click "Create repository".
+
+## Step 2: Add all group members as collaborators
+
+1. Go to the repo → Settings → Collaborators → "Add people".
+2. Add each member by their GitHub username or email.
+3. Each member accepts the invitation sent to their email.
+
+## Step 3: Clone the repo (all members do this)
+
+Open your terminal / Git Bash:
+
+  git clone https://github.com/YOUR-USERNAME/eiseb-financial-system.git
+  cd eiseb-financial-system
+
+## Step 4: Add the project files (Project Manager)
+
+Copy all the files from this package into the cloned folder, then:
+
+  git add .
+  git commit -m "Initial project setup — Group 2"
+  git push origin main
+
+## Step 5: Daily workflow for all members
+
+Before starting work each day:
+  git pull origin main              # get latest changes
+
+After making changes:
+  git add .
+  git commit -m "Brief description of what you did"
+  git push origin main
+
+## Suggested branch strategy (optional but good practice):
+
+  git checkout -b feature/login-page    # create your own branch
+  # ... do your work ...
+  git push origin feature/login-page
+  # Then open a Pull Request on GitHub to merge into main
+
+## Useful Git commands:
+
+  git status          # see what's changed
+  git log --oneline   # see commit history
+  git pull            # get latest from GitHub
+
+## Recommended GitHub extras:
+
+- Enable Issues (Settings → Features → Issues) — use it to track tasks.
+- Create a Project board (Projects tab) for Kanban task management.
+- Pin the README so it always shows on the repo homepage.

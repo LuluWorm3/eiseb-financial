@@ -1,0 +1,106 @@
+/* ================================================
+   Eiseb Country Traders — Financial System
+   Base Stylesheet
+   ================================================ */
+
+:root {
+  --primary:   #1a5c38;   /* deep green — farmland */
+  --accent:    #d4a017;   /* gold — cattle */
+  --bg:        #f7f5f0;
+  --surface:   #ffffff;
+  --text:      #1e1e1e;
+  --muted:     #6b7280;
+  --border:    #e0ddd6;
+  --danger:    #c0392b;
+  --success:   #27ae60;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ---- Navbar ---- */
+.navbar {
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+}
+.nav-brand { font-size: 1.2rem; font-weight: bold; color: var(--accent); }
+.navbar ul { list-style: none; display: flex; gap: 1.5rem; }
+.navbar a { color: #fff; text-decoration: none; font-size: 0.95rem; }
+.navbar a:hover, .navbar a.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+
+/* ---- Auth Pages ---- */
+.auth-page { display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.auth-container { width: 100%; max-width: 420px; padding: 2rem; }
+.auth-brand { text-align: center; margin-bottom: 2rem; }
+.auth-brand h1 { color: var(--primary); font-size: 1.4rem; }
+.auth-brand p { color: var(--muted); font-size: 0.9rem; }
+.auth-form {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.auth-form h2 { margin-bottom: 1.5rem; color: var(--primary); }
+.auth-link { text-align: center; margin-top: 1rem; font-size: 0.9rem; color: var(--muted); }
+.auth-link a { color: var(--primary); }
+
+/* ---- Forms ---- */
+.form-group { margin-bottom: 1.2rem; }
+.form-group label { display: block; font-size: 0.88rem; margin-bottom: 0.4rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #fafaf8;
+  transition: border 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* ---- Buttons ---- */
+.btn-primary {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: #14472c; }
+
+/* ---- Page Content ---- */
+.page-content { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
+.page-content h1 { color: var(--primary); margin-bottom: 0.5rem; }
+
+/* ---- Contact Form ---- */
+.contact-form {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  max-width: 600px;
+  margin-top: 1.5rem;
+}
