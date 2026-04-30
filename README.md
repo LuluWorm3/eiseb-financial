@@ -142,3 +142,4 @@ For project queries, contact your group Project Manager or course lecturer.
 ---
 
 *NUST — WPM711S Web Programming | Due: 31 May 2026*
+# eiseb-financial
