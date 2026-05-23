@@ -11,7 +11,7 @@
 | 222027592 | SINVULA, W E | Frontend Developer |
 | 222095814 | KAMILU, AOL | Backend Developer |
 | 222115823 | BASSON, N.B | Database Administrator |
-| 222130792 | UNJOMBALA, P M | Documentation & Testing |
+| 224084283 | THOMAS PS | Documentation & Testing |
 
 > **Note:** Reassign roles as agreed by your group.
 
