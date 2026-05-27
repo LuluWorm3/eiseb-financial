@@ -1,0 +1,118 @@
+/* ================================================
+   Dashboard Styles — Eiseb Financial System
+   ================================================ */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: var(--primary);
+  color: #fff;
+  padding: 1.5rem 2rem;
+}
+.page-header h1 { font-size: 1.6rem; margin-bottom: 0.2rem; }
+.page-header .subtitle { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+.header-date { color: var(--accent); font-size: 0.9rem; text-align: right; }
+
+.nav-user { color: rgba(255,255,255,0.8); font-size: 0.85rem; white-space: nowrap; }
+
+/* ---- Summary Cards ---- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  padding: 1.5rem 2rem;
+  background: #f0ede5;
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  border-left: 5px solid transparent;
+}
+.card-income  { border-left-color: var(--success); }
+.card-expense { border-left-color: var(--danger); }
+.card-balance { border-left-color: var(--accent); }
+.card-livestock { border-left-color: var(--primary); }
+
+.card-icon { font-size: 2rem; }
+.card-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.card-value { font-size: 1.4rem; font-weight: bold; margin: 0.1rem 0; }
+.card-sub   { font-size: 0.75rem; color: var(--muted); }
+
+.card-income  .card-value { color: var(--success); }
+.card-expense .card-value { color: var(--danger); }
+.card-balance .card-value { color: var(--accent); }
+.card-livestock .card-value { color: var(--primary); }
+
+/* ---- Content Row ---- */
+.content-row {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 2rem 2rem;
+}
+
+.panel {
+  background: var(--surface);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.panel-wide  { flex: 2; }
+.panel-narrow { flex: 1; }
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  background: #faf9f6;
+}
+.panel-header h3 { font-size: 1rem; color: var(--primary); }
+.link-all { font-size: 0.85rem; color: var(--primary); text-decoration: none; }
+.link-all:hover { text-decoration: underline; }
+
+/* ---- Data Table ---- */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.data-table th {
+  background: #f0ede5;
+  padding: 0.6rem 1rem;
+  text-align: left;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.data-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: #faf9f6; }
+
+.badge-income  { color: var(--success); font-weight: bold; }
+.badge-expense { color: var(--danger);  font-weight: bold; }
+
+/* ---- Quick Form ---- */
+#quickForm { padding: 1rem 1.2rem; }
+#quickForm .btn-primary { margin-top: 0.5rem; }
+
+@media (max-width: 700px) {
+  .content-row { flex-direction: column; }
+  .dashboard-grid { grid-template-columns: 1fr 1fr; }
+  .page-header { flex-direction: column; gap: 0.5rem; }
+}
